@@ -21,6 +21,8 @@ This program is currently work in progress and in an alpha state.
 
 Supports packet capture files in classic (pcap) and new (pcapng) file formats.
 
+See the [User documentation](/userdoc/index.html) for more information.
+
 The current alpha version supports the following statistical numbers:
     
 * Layer 2
