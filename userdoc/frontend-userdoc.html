@@ -1,0 +1,597 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pcapfilescanner Frontend User manual &#8212; pcapfilescanner  documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to pcapfilescanner’s documentation!" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="index.html" title="Welcome to pcapfilescanner’s documentation!"
+             accesskey="P">previous</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">pcapfilescanner  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pcapfilescanner Frontend User manual</a><ul>
+<li><a class="reference internal" href="#main-menu">Main Menu</a><ul>
+<li><a class="reference internal" href="#specifying-capture-files">Specifying Capture Files</a><ul>
+<li><a class="reference internal" href="#specify-capture-files-add-file">Specify Capture Files – Add File</a></li>
+<li><a class="reference internal" href="#specify-capture-files-file-list-from-file">Specify Capture Files – File List From File</a></li>
+<li><a class="reference internal" href="#specify-capture-files-file-list-from-clipboard">Specify Capture Files – File List From Clipboard</a></li>
+<li><a class="reference internal" href="#specify-capture-files-drag-and-drop">Specify Capture Files – Drag and Drop</a></li>
+<li><a class="reference internal" href="#specify-capture-files-removing-an-entry">Specify Capture Files – Removing an entry</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#starting-the-processing">Starting the processing</a></li>
+<li><a class="reference internal" href="#processing-time">Processing time</a></li>
+<li><a class="reference internal" href="#using-the-scratchspace">Using the ScratchSpace</a></li>
+<li><a class="reference internal" href="#outputs-processing-results">Outputs / Processing Results</a><ul>
+<li><a class="reference internal" href="#layer-2">Layer 2</a><ul>
+<li><a class="reference internal" href="#layer-2-ethernet-stats-general-ethernet-stats">Layer 2 -&gt; Ethernet Stats -&gt; General Ethernet Stats</a></li>
+<li><a class="reference internal" href="#layer-2-ethernet-stats-mac-ethernet-addresses-encountered">Layer 2 -&gt; Ethernet Stats -&gt; MAC/Ethernet addresses encountered</a></li>
+<li><a class="reference internal" href="#layer-2-linux-cooked-stats">Layer 2 -&gt; Linux Cooked Stats</a></li>
+<li><a class="reference internal" href="#layer-2-arp-stats">Layer 2 -&gt; ARP Stats</a></li>
+<li><a class="reference internal" href="#layer-2-arp-stats-extracted-address-mappings">Layer 2 -&gt; ARP Stats -&gt; Extracted Address Mappings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ip">IP</a></li>
+<li><a class="reference internal" href="#tcp">TCP</a><ul>
+<li><a class="reference internal" href="#tcp-general-stats">TCP -&gt; General Stats</a></li>
+<li><a class="reference internal" href="#tcp-tcp-source-ports">TCP -&gt; TCP source ports</a></li>
+<li><a class="reference internal" href="#tcp-tcp-dest-ports">TCP -&gt; TCP dest ports</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dns">DNS</a><ul>
+<li><a class="reference internal" href="#dns-queried-names">DNS -&gt; Queried Names</a></li>
+<li><a class="reference internal" href="#dns-resolved-names">DNS -&gt; Resolved Names</a></li>
+<li><a class="reference internal" href="#dns-unresolved-names">DNS -&gt; Unresolved Names</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#http">HTTP</a><ul>
+<li><a class="reference internal" href="#http-request-targets-uris">HTTP -&gt; Request Targets (URIs)</a></li>
+<li><a class="reference internal" href="#http-user-agents">HTTP -&gt; User Agents</a></li>
+<li><a class="reference internal" href="#http-status-codes">HTTP -&gt; Status Codes</a></li>
+<li><a class="reference internal" href="#http-server-software">HTTP -&gt; Server Software</a></li>
+<li><a class="reference internal" href="#http-content-types">HTTP -&gt; Content Types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to pcapfilescanner’s documentation!</a></p>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pcapfilescanner-frontend-user-manual">
+<h1>pcapfilescanner Frontend User manual<a class="headerlink" href="#pcapfilescanner-frontend-user-manual" title="Permalink to this headline">¶</a></h1>
+<p>Revision date: Sep 26, 2020</p>
+<div class="section" id="main-menu">
+<h2>Main Menu<a class="headerlink" href="#main-menu" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/frontend-mainwindow-mainmenu-disabled.png" src="_images/frontend-mainwindow-mainmenu-disabled.png" />
+<p>The first step to do is to specify the capture files you want to have analyzed
+by the program.</p>
+<p>Click the first button in the main menu: <code class="docutils literal notranslate"><span class="pre">Start</span></code>.</p>
+<img alt="_images/frontend-mainwindow-buttonstart-emph.png" src="_images/frontend-mainwindow-buttonstart-emph.png" />
+<p>The main content area will switch to <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">Capture</span> <span class="pre">Files</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">analyzed</span></code>.</p>
+<img alt="_images/frontend-selectfiles-dlg.png" src="_images/frontend-selectfiles-dlg.png" />
+<div class="section" id="specifying-capture-files">
+<h3>Specifying Capture Files<a class="headerlink" href="#specifying-capture-files" title="Permalink to this headline">¶</a></h3>
+<p>You have several options to specify the set of capture files to be analyzed.
+The list is built from your selections so you can combine some or all of these options.</p>
+<div class="section" id="specify-capture-files-add-file">
+<h4>Specify Capture Files – Add File<a class="headerlink" href="#specify-capture-files-add-file" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">File...</span></code> button allows you to select a single capture file. After you selected
+a file, the file is briefly checked for being a capture file and then added to the list.</p>
+<img alt="_images/frontend-selectfiles-dlg--addfile.png" src="_images/frontend-selectfiles-dlg--addfile.png" />
+</div>
+<div class="section" id="specify-capture-files-file-list-from-file">
+<h4>Specify Capture Files – File List From File<a class="headerlink" href="#specify-capture-files-file-list-from-file" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">List</span> <span class="pre">From</span> <span class="pre">File</span></code> button allows you to import a list of files to be analyzed from
+a text file.</p>
+<img alt="_images/frontend-selectfiles-dlg--importlistfromfile.png" src="_images/frontend-selectfiles-dlg--importlistfromfile.png" />
+<p>The text file must have each file to be analyzed on a line, with complete path.</p>
+<p>Each file is briefly checked for being a capture file and then added to the list.</p>
+</div>
+<div class="section" id="specify-capture-files-file-list-from-clipboard">
+<h4>Specify Capture Files – File List From Clipboard<a class="headerlink" href="#specify-capture-files-file-list-from-clipboard" title="Permalink to this headline">¶</a></h4>
+<p>Similarly you can copy a list of files in the same format from an editor to the clipboard and
+use the <code class="docutils literal notranslate"><span class="pre">From</span> <span class="pre">Clipboard</span></code> button.</p>
+<img alt="_images/frontend-selectfiles-dlg--fromclipboard.png" src="_images/frontend-selectfiles-dlg--fromclipboard.png" />
+</div>
+<div class="section" id="specify-capture-files-drag-and-drop">
+<h4>Specify Capture Files – Drag and Drop<a class="headerlink" href="#specify-capture-files-drag-and-drop" title="Permalink to this headline">¶</a></h4>
+<p>You can also drag and drop files from Windows Explorer into the designated area.</p>
+<img alt="_images/frontend-selectfiles-dlg--droparea.png" src="_images/frontend-selectfiles-dlg--droparea.png" />
+</div>
+<div class="section" id="specify-capture-files-removing-an-entry">
+<h4>Specify Capture Files – Removing an entry<a class="headerlink" href="#specify-capture-files-removing-an-entry" title="Permalink to this headline">¶</a></h4>
+<p>Clicking on the button <code class="docutils literal notranslate"><span class="pre">Remove</span> <span class="pre">Entry</span></code> allows you to remove the currently selected entry
+from the list.</p>
+<img alt="_images/frontend-selectfiles-dlg--removeentry.png" src="_images/frontend-selectfiles-dlg--removeentry.png" />
+</div>
+</div>
+<div class="section" id="starting-the-processing">
+<h3>Starting the processing<a class="headerlink" href="#starting-the-processing" title="Permalink to this headline">¶</a></h3>
+<p>When you’re done specifying the list of capture files to be process, click the button <cite>Start Processing</cite>.</p>
+<img alt="_images/frontend-selectfiles-dlg--startparsing.png" src="_images/frontend-selectfiles-dlg--startparsing.png" />
+<p>You will have to confirm that the processing may take a while and then the processing starts.</p>
+<p>Depending on many factors, the processing takes its time.</p>
+</div>
+<div class="section" id="processing-time">
+<h3>Processing time<a class="headerlink" href="#processing-time" title="Permalink to this headline">¶</a></h3>
+<p>The following factors influence the time it takes to process your capture files:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Disk read performance: how fast your hard disk/SSD/network drive can deliver the files.
+All files are read serially.</p></li>
+<li><p>Complexity of captured network traffic: internal data structures can have an influence
+depending on e.g. the number of individual IP addresses encountered, the number of TCP
+connections encountered, etc.</p></li>
+<li><p>If the program is not I/O bound – i.e. your disk can deliver the files faster
+than the program can process them – the memory speed may have a small influence.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="using-the-scratchspace">
+<h3>Using the ScratchSpace<a class="headerlink" href="#using-the-scratchspace" title="Permalink to this headline">¶</a></h3>
+<p>The program supports the short-term storage of arbitrary short text data and lists. This can be used
+by the user to store parameter data or for similar purposes in situations where the bulk processing
+leads to an overwhelming amount of data and one wants to further narrow down to a specific situation
+or event. The ScratchSpace can be used in these cases to temporarily store intermediate results and
+then recall the values later for e.g. filter inputs.</p>
+</div>
+<div class="section" id="outputs-processing-results">
+<h3>Outputs / Processing Results<a class="headerlink" href="#outputs-processing-results" title="Permalink to this headline">¶</a></h3>
+<p>In this section all the extracted metrics and processing results are listed together with a short
+explanation in the order of appearance starting in the main menu.</p>
+<div class="section" id="layer-2">
+<h4>Layer 2<a class="headerlink" href="#layer-2" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">Layer</span> <span class="pre">2</span></code> section contains metrics and other statistics about the lowest layer of the network stack
+reachable by software.</p>
+<div class="section" id="layer-2-ethernet-stats-general-ethernet-stats">
+<h5>Layer 2 -&gt; Ethernet Stats -&gt; General Ethernet Stats<a class="headerlink" href="#layer-2-ethernet-stats-general-ethernet-stats" title="Permalink to this headline">¶</a></h5>
+<p>This menu entry displays the following the metrics:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Entry</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Eth Frame Count</p></td>
+<td><p>number of Ethernet frames</p></td>
+</tr>
+<tr class="row-odd"><td><p>Min Eth Frame Size</p></td>
+<td><p>the size of the smallest Ethernet frame</p></td>
+</tr>
+<tr class="row-even"><td><p>Max Eth Frame Size</p></td>
+<td><p>this size of the the largest Ethernet frame (this doesn’t
+necessarily mean that a large frame has ever been
+transmitted over the wire, it could mean two or more
+frames have been merged by the capturing software
+infrastructure)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Untagged Frames</p></td>
+<td><p>number of Ethernet frames without VLAN tags</p></td>
+</tr>
+<tr class="row-even"><td><p>VLAN: single-tagged Frames</p></td>
+<td><p>number of Ethernet frames with a single VLAN tag</p></td>
+</tr>
+<tr class="row-odd"><td><p>VLAN: double-tagged Frames</p></td>
+<td><p>number of Ethernet frames with two VLAN tags (usually one
+used by the service provider and one used by the customer)</p></td>
+</tr>
+<tr class="row-even"><td><p>IPv4 packets</p></td>
+<td><p>number of IPv4 packets in Ethernet frames</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="layer-2-ethernet-stats-mac-ethernet-addresses-encountered">
+<h5>Layer 2 -&gt; Ethernet Stats -&gt; MAC/Ethernet addresses encountered<a class="headerlink" href="#layer-2-ethernet-stats-mac-ethernet-addresses-encountered" title="Permalink to this headline">¶</a></h5>
+<dl class="simple">
+<dt>There are four submenus in this menu each showing a similar list:</dt><dd><ul class="simple">
+<li><p>MAC address</p></li>
+<li><p>number of frames with that address</p></li>
+<li><p>Name of Manufacturer which registered the MAC address range with the IEEE (we include the database
+with these names in the binary of this program, no online services are used for this resolution,
+so it’s safe for offline usage but might not contain the latest registrations)</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="layer-2-linux-cooked-stats">
+<h5>Layer 2 -&gt; Linux Cooked Stats<a class="headerlink" href="#layer-2-linux-cooked-stats" title="Permalink to this headline">¶</a></h5>
+<p>Capture files acquired on Linux systems can contain a pseudo Layer 2 format called Linux Cooked Mode/SLL.
+The metrics contained in this list are similar to the ones in <code class="docutils literal notranslate"><span class="pre">Ethernet</span> <span class="pre">Stats</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">General</span> <span class="pre">Ethernet</span> <span class="pre">Stats</span></code>.</p>
+</div>
+<div class="section" id="layer-2-arp-stats">
+<h5>Layer 2 -&gt; ARP Stats<a class="headerlink" href="#layer-2-arp-stats" title="Permalink to this headline">¶</a></h5>
+<p>This menu entry displays the following the metrics:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Entry</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ARP Packet Count</p></td>
+<td><p>number of ARP packets (requests and replies)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARP Request Packet Count</p></td>
+<td><p>number of ARP Request packets</p></td>
+</tr>
+<tr class="row-even"><td><p>ARP Reply Packet Count</p></td>
+<td><p>number of ARP Reply packets</p></td>
+</tr>
+<tr class="row-odd"><td><p>RARP Packet Count</p></td>
+<td><p>number of RARP (Reverse ARP) packets</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="layer-2-arp-stats-extracted-address-mappings">
+<h5>Layer 2 -&gt; ARP Stats -&gt; Extracted Address Mappings<a class="headerlink" href="#layer-2-arp-stats-extracted-address-mappings" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of extracted mappings between MAC addresses and IPv4 addresses. If a hosts’
+IPv4 address changed in the duration of the processed capture files, only the latest mapping
+which could be extracted is displayed here.</p>
+<p>If there’s demand for such a feature we can implement the history of per-host configuration
+changes extractable from ARP later.</p>
+</div>
+</div>
+<div class="section" id="ip">
+<h4>IP<a class="headerlink" href="#ip" title="Permalink to this headline">¶</a></h4>
+<p>Displays a list of extracted metrics with a focus on IP:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Entry</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IPv4 packets</p></td>
+<td><p>number of IPv4 packets</p></td>
+</tr>
+<tr class="row-odd"><td><p>IPv4 packets in ethernet frames</p></td>
+<td><p>number of IPv4 packets found in ethernet frames</p></td>
+</tr>
+<tr class="row-even"><td><p>IPv4 packets in IEEE802.11 frames</p></td>
+<td><p>all WiFi/WLAN (IEEE 802.11) related functionality is not
+fully implemented yet</p></td>
+</tr>
+<tr class="row-odd"><td><p>IPv4 packets in Linux Cooked Mode frames</p></td>
+<td><p>number of IPv4 packets found in Linux Cooked Mode frames</p></td>
+</tr>
+<tr class="row-even"><td><p>IPv4 packets with wrong checksum</p></td>
+<td><p>number of IPv4 packets with a wrong checksum; this is not
+necessarily and indicator for problems as the checksum
+calculation could have been offloaded to the network
+interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>IPv4 packets with Don’t Fragment flag set</p></td>
+<td><p>number of IPv4 packets with the DF flag set (gateways
+are not allowed to split a packet if this is set)</p></td>
+</tr>
+<tr class="row-even"><td><p>IPv4 packets carrying fragments</p></td>
+<td><p>number of IPv4 packets carrying a fragment of a packet
+split by a gateway earlier in the route (usually happens
+when gateways have to change the Layer 2 and the target
+medium has a smaller maximum packet size, not very common
+anymore)</p></td>
+</tr>
+<tr class="row-odd"><td><p>IPv4 packets with IP options</p></td>
+<td><p>number of IPv4 packets containing IPv4 options</p></td>
+</tr>
+<tr class="row-even"><td><p>IPv6 packets</p></td>
+<td><p>number of IPv6 packets</p></td>
+</tr>
+<tr class="row-odd"><td><p>IPv6 packets in ethernet frames</p></td>
+<td><p>number of IPv6 packets found in ethernet frames</p></td>
+</tr>
+<tr class="row-even"><td><p>IPv6 packets in IEEE802.11 frames</p></td>
+<td><p>all WiFi/WLAN (IEEE 802.11) related functionality is not
+fully implemented yet</p></td>
+</tr>
+<tr class="row-odd"><td><p>IPv6 packets in Linux Cooked Mode frames</p></td>
+<td><p>number of IPv6 packets found in Linux Cooked Mode frames</p></td>
+</tr>
+<tr class="row-even"><td><p>IPv6 packets with IP options</p></td>
+<td><p>number of IPv6 packets containing IPv6 options</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tcp">
+<h4>TCP<a class="headerlink" href="#tcp" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="tcp-general-stats">
+<h5>TCP -&gt; General Stats<a class="headerlink" href="#tcp-general-stats" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of extracted metrics with a focus on TCP:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Entry</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TCP packet count</p></td>
+<td><p>number of TCP packets</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCP/IPv4 packet count</p></td>
+<td><p>number of TCP packets in IPv4 packets</p></td>
+</tr>
+<tr class="row-even"><td><p>TCP/IPv6 packet count</p></td>
+<td><p>number of TCP packets in IPv6 packets</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCP/IPv4 gross traffic</p></td>
+<td><p>sum of the sizes of all TCP over IPv4 packets incl. Layer 2</p></td>
+</tr>
+<tr class="row-even"><td><p>TCP/IPv6 gross traffic</p></td>
+<td><p>sum of the sizes of all TCP over IPv6 packets incl. Layer 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCP/IPv4 skipped (no higher level mapping)</p></td>
+<td><p>number of TCP packets skipped because the program doesn’t
+have an upper layer processing component (applies to all
+TCP-based protocols which are unsupported by the program or
+use non-standard TCP ports)</p></td>
+</tr>
+<tr class="row-even"><td><p>TCP/IPv6 skipped (no higher level mapping)</p></td>
+<td><p>dito for IPv6</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCP/IPv4 skipped (unsupported)</p></td>
+<td><p>dito but the program found a builtin mapping</p></td>
+</tr>
+<tr class="row-even"><td><p>TCP/IPv6 skipped (unsupported)</p></td>
+<td><p>dito for IPv6</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCP/IPv4 skipped (unhandled)</p></td>
+<td><p>number of TCP packets skipped with the program having an
+upper layer processing component but that component
+either doesn’t support the specific format (yet) or found
+a format violation</p></td>
+</tr>
+<tr class="row-even"><td><p>TCP/IPv6 skipped (unhandled)</p></td>
+<td><p>dito for IPv6</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCP full streams seen</p></td>
+<td><p>number of full TCP connections (from the initial handshake
+to the full connection termination sequence, does not imply
+that there couldn’t have been packets of the TCP connection
+lost or lost in the capturing process)</p></td>
+</tr>
+<tr class="row-even"><td><p>TCP streams reset</p></td>
+<td><p>number of TCP connections which have been reset by one of
+the peers (RST flag)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCP streams w/ unexpected proto flow</p></td>
+<td><p>number of TCP connections which contain a sequence of
+TCP packets unrecognized by the program</p></td>
+</tr>
+<tr class="row-even"><td><p>Rcv Win Scaling option: not offered, not used</p></td>
+<td><p>number of TCP connections not using the Receive Window
+Scaling option</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rcv Win Scaling option: offered, not used</p></td>
+<td><p>number of TCP handshakes with: one of the peers supported
+the Receive Window Scaling option, but the other peer
+didn’t activate it</p></td>
+</tr>
+<tr class="row-even"><td><p>Rcv Win Scaling option: used</p></td>
+<td><p>number of TCP handshakes with: both peers supported the
+Receive Window Scaling option and the option was active
+for the connection</p></td>
+</tr>
+<tr class="row-odd"><td><p>SACK option: not offered, not used</p></td>
+<td><p>number of TCP connections not using the SACK option</p></td>
+</tr>
+<tr class="row-even"><td><p>SACK option: offered, not used</p></td>
+<td><p>number of TCP handshakes with: one of the peers supported
+the SACK option, but the other peer didn’t activate it</p></td>
+</tr>
+<tr class="row-odd"><td><p>SACK option: used</p></td>
+<td><p>number of TCP handshakes with: both peers supported the
+SACK option and the option was active for the connection</p></td>
+</tr>
+<tr class="row-even"><td><p>Timestamp option: not offered, not used</p></td>
+<td><p>number of TCP connections not using the Timestamp option</p></td>
+</tr>
+<tr class="row-odd"><td><p>Timestamp option: offered, not used</p></td>
+<td><p>number of TCP handshakes with: one of the peers supported
+the Timestamp option, but the other peer didn’t activate it</p></td>
+</tr>
+<tr class="row-even"><td><p>Timestamp option: used</p></td>
+<td><p>number of TCP handshakes with: both peers supported the
+Timestamp option and the option was active for the
+connection</p></td>
+</tr>
+</tbody>
+</table>
+<p>Some of these entries are not fully implemented yet.</p>
+</div>
+<div class="section" id="tcp-tcp-source-ports">
+<h5>TCP -&gt; TCP source ports<a class="headerlink" href="#tcp-tcp-source-ports" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of extracted source TCP ports.</p>
+</div>
+<div class="section" id="tcp-tcp-dest-ports">
+<h5>TCP -&gt; TCP dest ports<a class="headerlink" href="#tcp-tcp-dest-ports" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of extracted destination TCP ports.</p>
+</div>
+</div>
+<div class="section" id="dns">
+<h4>DNS<a class="headerlink" href="#dns" title="Permalink to this headline">¶</a></h4>
+<p>Displays a list of extracted metrics with a focus on DNS:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Entry</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DNS/UDP/IPv4 packets</p></td>
+<td><p>number of DNS packets over UDP over IPv4</p></td>
+</tr>
+<tr class="row-odd"><td><p>DNS/UDP/IPv6 packets</p></td>
+<td><p>number of DNS packets over UDP over IPv6</p></td>
+</tr>
+<tr class="row-even"><td><p>Query packets</p></td>
+<td><p>number of DNS query packets</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reply packets</p></td>
+<td><p>number of DNS reply packets</p></td>
+</tr>
+<tr class="row-even"><td><p>Reply no error</p></td>
+<td><p>number of DNS reply packets without error indication</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reply format error</p></td>
+<td><p>number of DNS reply packets with the DNS server indicating
+a format error in the query packet</p></td>
+</tr>
+<tr class="row-even"><td><p>Reply server failure</p></td>
+<td><p>number of DNS reply packets with the DNS server indicating
+that it failed to process the query packet because of a
+server failure</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reply name error</p></td>
+<td><p>number of DNS reply packets with the DNS server indicating
+that a queried name could not be resolved</p></td>
+</tr>
+<tr class="row-even"><td><p>Reply not implemented error</p></td>
+<td><p>number of DNS reply packets with the DNS server indicating
+that it hasn’t implemented the specific functionality
+requested by the client (or similar, these are generic
+errors and interpretation depends on specific server
+software used)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reply refused error</p></td>
+<td><p>number of DNS reply packets with the DNS server refusing
+to resolve the query</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="dns-queried-names">
+<h5>DNS -&gt; Queried Names<a class="headerlink" href="#dns-queried-names" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of queried names via DNS. Queried names are primarily host names.
+Note that this list also includes names which couldn’t be resolved.</p>
+</div>
+<div class="section" id="dns-resolved-names">
+<h5>DNS -&gt; Resolved Names<a class="headerlink" href="#dns-resolved-names" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of resolved names via DNS. Resolved names are primarily host names.
+These are names which have been queried by a host and a reply has been extracted which
+was sent by a DNS server.</p>
+</div>
+<div class="section" id="dns-unresolved-names">
+<h5>DNS -&gt; Unresolved Names<a class="headerlink" href="#dns-unresolved-names" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of queried names for which no reply could be extracted, either because
+there was no reply or it got lost in the capturing process.</p>
+</div>
+</div>
+<div class="section" id="http">
+<h4>HTTP<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h4>
+<p>This program can currently extract metrics and other data from unencrypted HTTP traffic only.</p>
+<div class="section" id="http-request-targets-uris">
+<h5>HTTP -&gt; Request Targets (URIs)<a class="headerlink" href="#http-request-targets-uris" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of request targets (URIs) extracted from HTTP traffic together with the value of
+the HTTP <code class="docutils literal notranslate"><span class="pre">Host</span></code> header and the number of occurrences of the respective combination.</p>
+</div>
+<div class="section" id="http-user-agents">
+<h5>HTTP -&gt; User Agents<a class="headerlink" href="#http-user-agents" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of User Agents extracted from the HTTP requests seen by the program, together
+with the number of occurrences.</p>
+</div>
+<div class="section" id="http-status-codes">
+<h5>HTTP -&gt; Status Codes<a class="headerlink" href="#http-status-codes" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of HTTP Response Status Codes extracted from the HTTP responses seen by the
+program, together with the number of occurences.</p>
+</div>
+<div class="section" id="http-server-software">
+<h5>HTTP -&gt; Server Software<a class="headerlink" href="#http-server-software" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of Server Software strings extracted from the HTTP responses seen by the program,
+together with the number of occurences. The values of the <code class="docutils literal notranslate"><span class="pre">Server</span></code> header have been extracted
+from HTTP responses for this list.</p>
+</div>
+<div class="section" id="http-content-types">
+<h5>HTTP -&gt; Content Types<a class="headerlink" href="#http-content-types" title="Permalink to this headline">¶</a></h5>
+<p>Displays a list of HTTP content types extracted from the HTTP responses seen by the program,
+together with the number of occurences. The values of the <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> header have been extracted
+from HTTP responses for this list.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="index.html" title="Welcome to pcapfilescanner’s documentation!"
+             >previous</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">pcapfilescanner  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019-2020, Ronny Press.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.
+    </div>
+  </body>
+</html>
